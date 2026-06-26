@@ -14,19 +14,19 @@ st.sidebar.write("**Use Case:** Treatment, Payment, and Operations")
 st.sidebar.write("**Approach:** Modular agent-style workflow")
 st.sidebar.warning("Proof of concept only. Not for clinical use.")
 
-st.title("🏥 Clinical AI Review Assistant")
+st.title("Clinical AI Review Assistant")
 st.caption("Agentic AI-style proof of concept for clinical decision support and payment integrity review")
 
 st.divider()
 
 sample_notes = {
-    "❤️ Cardiac Case": """67-year-old male with history of hypertension and type 2 diabetes presents with crushing chest pain radiating to the left arm. Blood pressure is 178/101. Troponin elevated. Started aspirin and heparin. Admitted for observation.""",
+    "Cardiac Case": """67-year-old male with history of hypertension and type 2 diabetes presents with crushing chest pain radiating to the left arm. Blood pressure is 178/101. Troponin elevated. Started aspirin and heparin. Admitted for observation.""",
 
-    "🫁 Respiratory Case": """72-year-old female presents with fever, productive cough, shortness of breath, and oxygen saturation of 88%. Chest x-ray shows right lower lobe infiltrate. Started on ceftriaxone and azithromycin for suspected pneumonia.""",
+    "Respiratory Case": """72-year-old female presents with fever, productive cough, shortness of breath, and oxygen saturation of 88%. Chest x-ray shows right lower lobe infiltrate. Started on ceftriaxone and azithromycin for suspected pneumonia.""",
 
-    "🩺 Diabetes Follow-up": """58-year-old patient with type 2 diabetes presents for follow-up. HbA1c is 9.4%. Patient reports medication nonadherence and numbness in both feet. Metformin continued and insulin adjustment discussed.""",
+    "Diabetes Follow-up": """58-year-old patient with type 2 diabetes presents for follow-up. HbA1c is 9.4%. Patient reports medication nonadherence and numbness in both feet. Metformin continued and insulin adjustment discussed.""",
 
-    "🚑 Stroke Case": """76-year-old male presents with sudden right-sided weakness, facial droop, and slurred speech. CT head negative for hemorrhage. Neurology consulted. Patient admitted for suspected ischemic stroke."""
+    "Stroke Case": """76-year-old male presents with sudden right-sided weakness, facial droop, and slurred speech. CT head negative for hemorrhage. Neurology consulted. Patient admitted for suspected ischemic stroke."""
 }
 
 case_choice = st.selectbox("Choose a sample case", list(sample_notes.keys()))
@@ -173,21 +173,21 @@ if st.button("Analyze Clinical Note"):
 
     st.divider()
 
-    st.subheader("🧠 Clinical Pattern Recognition Agent")
+    st.subheader("Clinical Pattern Recognition Agent")
     diagnosis_df = pd.DataFrame(
         diagnoses,
         columns=["Detected Diagnosis", "Suggested ICD-10", "Evidence", "Confidence"]
     )
     st.dataframe(diagnosis_df, use_container_width=True)
 
-    st.subheader("🔍 Documentation Completeness Agent")
+    st.subheader("Documentation Completeness Agent")
     if missing_docs:
         for item in missing_docs:
             st.warning(f"Missing or unclear: {item}")
     else:
         st.success("No major documentation gaps detected.")
 
-    st.subheader("📈 Risk Stratification Agent")
+    st.subheader("Risk Stratification Agent")
     if risk_level == "High":
         st.error(f"Risk Level: HIGH | Score: {risk_score}")
     elif risk_level == "Moderate":
@@ -195,11 +195,11 @@ if st.button("Analyze Clinical Note"):
     else:
         st.success(f"Risk Level: LOW | Score: {risk_score}")
 
-    st.subheader("🕒 Clinical Timeline Agent")
+    st.subheader("Clinical Timeline Agent")
     for event in timeline:
         st.write(f"✅ {event}")
 
-    st.subheader("📝 Clinical Reasoning Summary")
+    st.subheader("Clinical Reasoning Summary")
     st.info(summary)
 
     st.subheader("✅ Reviewer Recommendation")
