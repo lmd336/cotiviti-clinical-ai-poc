@@ -33,3 +33,15 @@ def diagnosis_agent(note):
         })
 
     return diagnoses
+
+if st.button("Analyze Clinical Note"):
+
+    diagnoses = diagnosis_agent(note)
+
+    st.success("Analysis Complete")
+
+    st.subheader("Detected Diagnoses")
+
+    df = pd.DataFrame(diagnoses)
+
+    st.dataframe(df, use_container_width=True)
