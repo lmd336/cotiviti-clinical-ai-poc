@@ -202,7 +202,7 @@ if st.button("Analyze Clinical Note"):
     st.subheader("Clinical Reasoning Summary")
     st.info(summary)
 
-    st.subheader("✅ Reviewer Recommendation")
+    st.subheader("Reviewer Recommendation")
     st.write(
         "Human review is recommended before claim approval, denial, or final coding. "
         "This prototype demonstrates how modular AI agents can assist reviewers without replacing clinical or coding judgment."
