@@ -3,21 +3,74 @@ import streamlit as st
 import pandas as pd
 
 st.set_page_config(
-    page_title="Clinical AI Review Assistant",
+    page_title="Healthcare AI Decision Support Dashboard",
     page_icon="🏥",
     layout="wide"
 )
 
-st.sidebar.title("Prototype Info")
-st.sidebar.write("**Topic:** Clinical Decision Making & Pattern Recognition")
-st.sidebar.write("**Use Case:** Treatment, Payment, and Operations")
-st.sidebar.write("**Approach:** Modular agent-style workflow")
-st.sidebar.warning("Proof of concept only. Not for clinical use.")
+st.sidebar.title("Project Overview")
+
+st.sidebar.markdown("""
+### Internship Topic
+
+Clinical Decision Making & Pattern Recognition
+
+### Technologies
+
+- Python
+- Streamlit
+- Pattern Recognition
+- Rule-Based Inference
+- Modular Agent Workflow
+
+### Healthcare Domains
+
+- Treatment
+- Payment
+- Operations
+
+### Prototype Status
+
+🟢 Functional
+
+### Disclaimer
+
+Educational proof of concept.
+Not intended for clinical use.
+""")
 
 st.title("Clinical AI Review Assistant")
-st.caption("Agentic AI-style proof of concept for clinical decision support and payment integrity review")
+st.caption(
+    "A proof-of-concept demonstrating AI-assisted Treatment, Payment, and Operations (TPO) using modular agent-based clinical decision support."
+)
 
 st.divider()
+
+st.markdown("""
+### Agentic Workflow
+
+```text
+Clinical Note
+      │
+      ▼
+Clinical Pattern Recognition Agent
+      │
+      ▼
+Coding Recommendation Agent
+      │
+      ▼
+Documentation Completeness Agent
+      │
+      ▼
+Risk Stratification Agent
+      │
+      ▼
+Clinical Summary Agent
+      │
+      ▼
+Human Reviewer
+
+""")
 
 sample_notes = {
     "Cardiac Case": """67-year-old male with history of hypertension and type 2 diabetes presents with crushing chest pain radiating to the left arm. Blood pressure is 178/101. Troponin elevated. Started aspirin and heparin. Admitted for observation.""",
