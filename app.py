@@ -1,3 +1,6 @@
+import streamlit as st
+import pandas as pd
+
 def diagnosis_agent(note):
 
     note = note.lower()
